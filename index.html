@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Soumyadeep Datta - Portfolio</title>
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -46,21 +48,23 @@
   <h2>My Projects</h2>
   <div class="project-grid">
 
-    <!-- 📁 Portfolio Website Project -->
-    <div class="project-card">
-      <img src="icons/portfolio.svg" alt="Portfolio Icon" style="width: 50px; margin-bottom: 10px;">
-      <h3>Portfolio Website</h3>
-      <p>A personal portfolio built using HTML, CSS, and JavaScript. Features dark/light mode, scroll animations, a Snake game, and responsive design.</p>
-      <a href="https://github.com/soumya-datta/my-portfolio-repo" target="_blank" class="apple-btn" style="margin-top: 10px;">View Code</a>
-    </div>
+  
+    <!-- 🌐 Portfolio Website Project -->
+<div class="project-card">
+  <i class="fas fa-laptop-code fa-3x" style="margin-bottom: 10px;"></i>
+  <h3>Portfolio Website</h3>
+  <p>A personal portfolio built using HTML, CSS, and JavaScript. Features dark/light mode, scroll animations, a Snake game, and responsive design.</p>
+  <a href="https://github.com/soumya-datta/my-portfolio-repo" target="_blank" class="apple-btn" style="margin-top: 10px;">View Code</a>
+</div>
 
-    <!-- 🧮 C Calculator Project -->
-    <div class="project-card">
-      <img src="icons/calc-icon.svg" alt="Calculator Icon" style="width: 50px; margin-bottom: 10px;">
-      <h3>C Calculator</h3>
-      <p>A command-line calculator built in C. Supports basic arithmetic and scientific functions like sin, cos, log, and sqrt using math.h.</p>
-      <a href="https://github.com/yourusername/calculator-c" target="_blank" class="apple-btn">View Code</a>
-    </div>
+<!-- 🧮 C Calculator Project -->
+<div class="project-card">
+  <i class="fas fa-calculator fa-3x" style="margin-bottom: 10px;"></i>
+  <h3>C Calculator</h3>
+  <p>A command-line calculator built in C. Supports basic arithmetic and scientific functions like sin, cos, log, and sqrt using math.h.</p>
+  <a href="https://github.com/yourusername/calculator-c" target="_blank" class="apple-btn">View Code</a>
+</div>
+
 
   </div>
   <section id="resume" class="clean-section reveal">
@@ -75,34 +79,35 @@
 
 
   <section id="skills" class="clean-section reveal">
-    <h2>Skills & Tools</h2>
-
-    <div class="skills-grid">
-      <div class="skill-item">
-        <img src="icons/html.svg" alt="HTML" />
-        <span>HTML</span>
-      </div>
-      <div class="skill-item">
-        <img src="icons/css.svg" alt="CSS" />
-        <span>CSS</span>
-      </div>
-      <div class="skill-item">
-        <img src="icons/js.svg" alt="JavaScript" />
-        <span>JavaScript</span>
-      </div>
-      <div class="skill-item">
-        <img src="icons/c.svg" alt="C Language" />
-        <span>C Language</span>
-      </div>
-      <div class="skill-item">
-        <img src="icons/github.svg" alt="GitHub" />
-        <span>GitHub</span>
-      </div>
-      <div class="skill-item">
-        <img src="icons/figma.svg" alt="Figma" />
-        <span>Figma</span>
-      </div>
+  <h2>Skills & Tools</h2>
+  <div class="skills-grid">
+    <div class="skill-item">
+      <i class="fab fa-html5 fa-3x"></i>
+      <span>HTML</span>
     </div>
+    <div class="skill-item">
+      <i class="fab fa-css3-alt fa-3x"></i>
+      <span>CSS</span>
+    </div>
+    <div class="skill-item">
+      <i class="fab fa-js fa-3x"></i>
+      <span>JavaScript</span>
+    </div>
+    <div class="skill-item">
+      <i class="fas fa-code fa-3x"></i>
+      <span>C Language</span>
+    </div>
+    <div class="skill-item">
+      <i class="fab fa-github fa-3x"></i>
+      <span>GitHub</span>
+    </div>
+    <div class="skill-item">
+      <i class="fab fa-figma fa-3x"></i>
+      <span>Figma</span>
+    </div>
+  </div>
+</section>
+
 
     <div class="skill-bars">
       <div class="bar">
@@ -140,7 +145,30 @@
   <footer>
     <p>&copy; 2025 Soumyadeep Datta. All rights reserved.</p>
   </footer>
+<!-- 🚀 Floating Rocket Back to Top Button -->
+<!-- 🚀 Floating Rocket with Smoke Trail -->
+<div class="rocket-wrapper">
+  <button class="to-top-btn" id="toTopBtn" title="Back to Top">
+    🚀
+    <span class="smoke" id="smokeTrail"></span>
+  </button>
+</div>
 
   <script src="script.js"></script>
+  
 </body>
+<!-- 💬 Chatbot Widget -->
+<div class="chatbot-widget">
+  <div class="chat-icon" onclick="toggleChat()">
+    💬
+  </div>
+  <div class="chat-box" id="chatBox">
+    <div class="chat-header">Hi, I'm your site assistant 👋</div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-msg bot">How can I help you today?</div>
+    </div>
+    <input type="text" id="userInput" placeholder="Type a message..." onkeydown="handleChat(event)">
+  </div>
+</div>
+
 </html>

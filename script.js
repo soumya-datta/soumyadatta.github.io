@@ -136,25 +136,99 @@ function revealOnScroll() {
 }
 
 window.addEventListener('scroll', revealOnScroll);
-// Scroll to top button
-const scrollTopBtn = document.getElementById("scrollTopBtn");
 
-window.onscroll = function () {
-  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-    scrollTopBtn.style.display = "block";
-  } else {
-    scrollTopBtn.style.display = "none";
-  }
-};
-
-scrollTopBtn.onclick = function () {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-};
 
 window.addEventListener("load", () => {
   const loader = document.getElementById("preloader");
   loader.style.opacity = "0";
   loader.style.pointerEvents = "none";
   setTimeout(() => loader.style.display = "none", 500);
+});
+
+function toggleChat() {
+  const chatBox = document.getElementById("chatBox");
+  chatBox.style.display = chatBox.style.display === "block" ? "none" : "block";
+}
+
+function handleChat(event) {
+  if (event.key === "Enter") {
+    const input = document.getElementById("userInput");
+    const msg = input.value.trim();
+    if (msg) {
+      addMessage("user", msg);
+      respond(msg);
+      input.value = "";
+    }
+  }
+}
+
+function addMessage(type, text) {
+  const chat = document.getElementById("chatMessages");
+  const msgEl = document.createElement("div");
+  msgEl.className = "chat-msg " + type;
+  msgEl.textContent = text;
+  chat.appendChild(msgEl);
+  chat.scrollTop = chat.scrollHeight;
+}
+
+function respond(userMsg) {
+  let reply = "I'm still learning! 😅";
+
+  const msg = userMsg.toLowerCase();
+  if (msg.includes("hello") || msg.includes("hi")) {
+    reply = "Hey there! 👋";
+  } else if (msg.includes("project")) {
+    reply = "Check out the Projects section above!";
+  } else if (msg.includes("resume")) {
+    reply = "You can view my resume in the Resume section 📄";
+  } else if (msg.includes("name")) {
+    reply = "I'm Soumya Datta's site assistant 🤖";
+  } else if (msg.includes("skills")) {
+    reply = "I'm skilled in HTML, CSS, JS, C, GitHub & Figma 💻";
+  }
+
+  setTimeout(() => typeBotMessage(reply), 500);
+}
+
+function typeBotMessage(text) {
+  const chat = document.getElementById("chatMessages");
+  const msgEl = document.createElement("div");
+  msgEl.className = "chat-msg bot";
+  chat.appendChild(msgEl);
+
+  let index = 0;
+  const typing = setInterval(() => {
+    msgEl.textContent += text.charAt(index);
+    index++;
+    chat.scrollTop = chat.scrollHeight;
+    if (index === text.length) {
+      clearInterval(typing);
+      speakText(text); // 👇 calls speech when done typing
+    }
+  }, 30); // typing speed
+}
+// 🚀 Show/hide rocket button
+const toTopBtn = document.getElementById("toTopBtn");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    toTopBtn.style.display = "block";
+  } else {
+    toTopBtn.style.display = "none";
+  }
+});
+
+toTopBtn.addEventListener("click", () => {
+  // Trigger smoke animation
+  const smoke = document.getElementById("smokeTrail");
+  smoke.classList.add("active");
+
+  // Scroll to top
+  window.scrollTo({ top: 0, behavior: "smooth" });
+
+  // Remove smoke class after animation
+  setTimeout(() => {
+    smoke.classList.remove("active");
+  }, 800);
 });
 
