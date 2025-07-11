@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soumyadeep Datta - Portfolio</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<button id="scrollTopBtn" title="Go to top">⬆️</button>
+<!-- 🌐 Preloader -->
+<div id="preloader">
+  <div class="loader"></div>
+</div>
+
+<body>
+  <nav>
+    <div class="nav-logo">SD</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#game">Snake</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button id="modeToggle">🌙</button>
+  </nav>
+
+  <header class="apple-hero">
+    <div class="hero-inner">
+      <img src="profile.png" alt="Soumyadeep Datta" class="hero-pic" />
+      <h1>Soumyadeep Datta</h1>
+      <h2 class="type-text"></h2>
+      <p>I design and build thoughtful digital experiences.</p>
+      <a href="#projects" class="apple-btn">Explore Projects</a>
+    </div>
+  </header>
+
+  <section id="about" class="clean-section reveal">
+    <h2>About Me</h2>
+    <p>I'm a beginner exploring design and code. I love building clean, simple, and user-friendly things.</p>
+  </section>
+
+  <section id="projects" class="clean-section reveal">
+  <h2>My Projects</h2>
+  <div class="project-grid">
+
+    <!-- 📁 Portfolio Website Project -->
+    <div class="project-card">
+      <img src="icons/portfolio.svg" alt="Portfolio Icon" style="width: 50px; margin-bottom: 10px;">
+      <h3>Portfolio Website</h3>
+      <p>A personal portfolio built using HTML, CSS, and JavaScript. Features dark/light mode, scroll animations, a Snake game, and responsive design.</p>
+      <a href="https://github.com/soumya-datta/my-portfolio-repo" target="_blank" class="apple-btn" style="margin-top: 10px;">View Code</a>
+    </div>
+
+    <!-- 🧮 C Calculator Project -->
+    <div class="project-card">
+      <img src="icons/calc-icon.svg" alt="Calculator Icon" style="width: 50px; margin-bottom: 10px;">
+      <h3>C Calculator</h3>
+      <p>A command-line calculator built in C. Supports basic arithmetic and scientific functions like sin, cos, log, and sqrt using math.h.</p>
+      <a href="https://github.com/yourusername/calculator-c" target="_blank" class="apple-btn">View Code</a>
+    </div>
+
+  </div>
+  <section id="resume" class="clean-section reveal">
+  <h2>Resume</h2>
+  <div class="resume-container">
+    <p>You can view or download my updated resume using the button below.</p>
+    <a href="resume-soumya-datta.pdf" target="_blank" class="apple-btn resume-btn">📄 View Resume</a>
+  </div>
+</section>
+
+</section>
+
+
+  <section id="skills" class="clean-section reveal">
+    <h2>Skills & Tools</h2>
+
+    <div class="skills-grid">
+      <div class="skill-item">
+        <img src="icons/html.svg" alt="HTML" />
+        <span>HTML</span>
+      </div>
+      <div class="skill-item">
+        <img src="icons/css.svg" alt="CSS" />
+        <span>CSS</span>
+      </div>
+      <div class="skill-item">
+        <img src="icons/js.svg" alt="JavaScript" />
+        <span>JavaScript</span>
+      </div>
+      <div class="skill-item">
+        <img src="icons/c.svg" alt="C Language" />
+        <span>C Language</span>
+      </div>
+      <div class="skill-item">
+        <img src="icons/github.svg" alt="GitHub" />
+        <span>GitHub</span>
+      </div>
+      <div class="skill-item">
+        <img src="icons/figma.svg" alt="Figma" />
+        <span>Figma</span>
+      </div>
+    </div>
+
+    <div class="skill-bars">
+      <div class="bar">
+        <span>HTML</span>
+        <div class="progress"><div style="width: 90%;"></div></div>
+      </div>
+      <div class="bar">
+        <span>CSS</span>
+        <div class="progress"><div style="width: 85%;"></div></div>
+      </div>
+      <div class="bar">
+        <span>JavaScript</span>
+        <div class="progress"><div style="width: 70%;"></div></div>
+      </div>
+      <div class="bar">
+        <span>C Language</span>
+        <div class="progress"><div style="width: 80%;"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="game" class="clean-section reveal">
+    <h2>Snake Game</h2>
+    <p>Use the arrow keys to control the snake. Click the button below to start!</p>
+    <button onclick="startSnakeGame()">Start Game</button>
+    <canvas id="snakeGame" width="300" height="300" style="display: none;"></canvas>
+  </section>
+
+  <section id="contact" class="clean-section reveal">
+    <h2>Contact</h2>
+    <p>Email: soumyadatta054@gmail.com</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/soumyadeep-datta-1a1ba8322/" target="_blank">View Profile</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Soumyadeep Datta. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
